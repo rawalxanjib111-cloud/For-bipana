@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Bipana ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    width:90%;
+    max-width:500px;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+h1{
+    color:#ff3366;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:18px;
+    color:#444;
+    line-height:1.6;
+}
+
+.buttons{
+    margin-top:30px;
+    position:relative;
+    height:120px;
+}
+
+button{
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#yes{
+    background:#ff3366;
+    color:white;
+}
+
+#yes:hover{
+    transform:scale(1.1);
+}
+
+#no{
+    position:absolute;
+    left:65%;
+    top:0;
+    background:#ddd;
+}
+
+#message{
+    display:none;
+    margin-top:25px;
+    color:#ff3366;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.heart{
+    position:absolute;
+    color:red;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Hi Bipana ❤️</h1>
+
+<p>
+I don't know what the future holds,
+but I know one thing...
+<br><br>
+Every time I think about you,
+you make me smile.
+<br><br>
+Would you make me the happiest person
+and be my girlfriend? ❤️
+</p>
+
+<div class="buttons">
+<button id="yes">Yes ❤️</button>
+<button id="no">No 🙈</button>
+</div>
+
+<div id="message">
+🎉 Yay!! ❤️<br><br>
+You just made me the happiest person alive! 🌹
+</div>
+
+</div>
+
+<script>
+
+const noBtn=document.getElementById("no");
+const yesBtn=document.getElementById("yes");
+const message=document.getElementById("message");
+
+noBtn.addEventListener("mouseover",()=>{
+
+const x=Math.random()*(window.innerWidth-120);
+const y=Math.random()*(window.innerHeight-80);
+
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+
+});
+
+yesBtn.onclick=()=>{
+
+message.style.display="block";
+
+yesBtn.style.display="none";
+noBtn.style.display="none";
+
+for(let i=0;i<80;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
